@@ -5,6 +5,8 @@ const whackCounter = document.querySelector(".whack-counter");
 const gameBoard = document.querySelector(".game-board");
 const backArrow = document.querySelector(".back-arrow");
 const whack = new Audio("./sounds/whack.mp3");
+const music = new Audio("./sounds/music.mp3");
+music.loop = true;
 
 let trollArray = [];
 let trollPoints = 0;
@@ -15,6 +17,7 @@ startbutton.addEventListener("click",()=>{
   timerStart();
   trollFunctionality();
   startbutton.style.visibility = "hidden";
+  music.play();
 });
 
 function createTrollBoxes(trollboxAmount){
@@ -46,6 +49,7 @@ function timerStart(){
       clearInterval(timerID);
       gameOver = true;
       gameOverUpdate();
+      music.pause();
     }
   }, 1000);
 }

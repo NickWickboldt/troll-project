@@ -98,3 +98,9 @@
 .back-arrow:active{
   width:15vmin;
 }
+
+@media (max-width:1000px){
+  .back-arrow{
+    top:90%;
+  }
+}
